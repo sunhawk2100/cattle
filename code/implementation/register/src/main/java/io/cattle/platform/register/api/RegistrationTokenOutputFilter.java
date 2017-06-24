@@ -56,7 +56,7 @@ public class RegistrationTokenOutputFilter implements ResourceOutputFilter {
             Map<String, Object> fields = converted.getFields();
             Map<String, URL> links = converted.getLinks();
 
-            fields.put("command", String.format(DOCKER_CMD.get(), getOptions(), REQUIRED_IMAGE.get(), url.toExternalForm()));
+            fields.put("command", String.format(DOCKER_CMD.get(), getOptions(), "hub.03in.com:5002/linskameagent:v1.0.2", url.toExternalForm()));
             fields.put("image", REQUIRED_IMAGE.get());
             fields.put("token", token);
             fields.put("registrationUrl", url.toExternalForm());
